@@ -22,7 +22,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('id', 'username','email', 'first_name', 'password','is_admin','is_owner')
+        fields = ('id', 'username','email', 'first_name','password','identification_card','is_admin','is_owner','is_lessee','phone')
         '''Para que no muestre la clave al momento de consultar'''
         extra_kwargs= {
             'password':{
