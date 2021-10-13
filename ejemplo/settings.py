@@ -1,5 +1,5 @@
 
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -16,6 +16,10 @@ SECRET_KEY = 'q#=f!@!+^**s3u6e02+0rvsq6ibad%5=bn8(82&j88^oslbfdn'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+#configuracion de CORS 
+JWT_SECRET_KEY = os.environ.get('JWT_SECRET_KEY')
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
 
 
 # Application definition
@@ -50,7 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'ejemplo.urls'
@@ -139,5 +143,5 @@ REST_FRAMEWORK = {
     # ]
 }
 # Configure Django App for Heroku.
-importar django_heroku
-django_heroku.settings (locales ())
+import django_heroku
+django_heroku.settings(locals())
